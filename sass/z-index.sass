@@ -9,7 +9,7 @@ $z-lighting-color: #888!default
   @if $shadow == false
     box-shadow: 0 0 0 transparent
   @if $text == true
-    text-shadow: 45px 45px 0 $z-lighting-color
+    text-shadow: $x-light $y-light ($z-index * 2) $z-lighting-color
     box-shadow: 0 0 0 transparent
   @if $z-index > 10
     @error "oops the $z-index value for the mixin z-position was set to #{$z-index}, keep the value between 0 and 10."
@@ -28,4 +28,4 @@ $z-lighting-color: #888!default
   +z-position($z-index: 10px, $shadow: true)
 
 .z-icon
-  +z-position($z-index: 10px, $shadow: false, $text: true)
+  +z-position($z-index: 1px, $shadow: false, $text: true)
