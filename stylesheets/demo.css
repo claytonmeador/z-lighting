@@ -1,0 +1,50 @@
+body {
+  font-family: "helvetica neue" helvetica arial sans-serif;
+  background-color: #ff9d9d;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box; }
+  body div {
+    box-sizing: border-box; }
+
+#panel {
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  width: 60vw;
+  height: 60vh;
+  padding: 1rem;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  margin-left: 20vw;
+  margin-right: 20vw; }
+  #panel p {
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    color: #888;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem; }
+
+select {
+  background: white;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  color: #333;
+  border-radius: 0;
+  height: 3rem;
+  margin-left: 2rem;
+  -webkit-appearance: none; }
+
+#button {
+  box-sizing: border-box;
+  background-color: #4A90E2;
+  width: 400px;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem; }
+
+/*# sourceMappingURL=demo.css.map */

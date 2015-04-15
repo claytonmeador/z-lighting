@@ -1,0 +1,31 @@
+$x-light: 0px!default
+$y-light: 2px!default
+$z-lighting-color: #888!default
+
+=z-position($z-index: 0, $shadow: false, $text: false)
+  z-index: $z-index * 100
+  @if $shadow == true
+    box-shadow: $x-light $y-light ($z-index * 2) $z-lighting-color
+  @if $shadow == false
+    box-shadow: 0 0 0 transparent
+  @if $text == true
+    text-shadow: 45px 45px 0 $z-lighting-color
+    box-shadow: 0 0 0 transparent
+  @if $z-index > 10
+    @error "oops the $z-index value for the mixin z-position was set to #{$z-index}, keep the value between 0 and 10."
+
+
+.z-button
+  +z-position($z-index: 4px, $shadow: true)
+
+.z-panel
+  +z-position($z-index: 8px, $shadow: true)
+
+.z-dropdown
+  +z-position($z-index: 8px, $shadow: true)
+
+.z-modal
+  +z-position($z-index: 10px, $shadow: true)
+
+.z-icon
+  +z-position($z-index: 10px, $shadow: false, $text: true)

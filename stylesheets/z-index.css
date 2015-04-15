@@ -1,0 +1,23 @@
+.z-button {
+  z-index: 400px;
+  box-shadow: 0px 2px 8px #888; }
+
+.z-panel {
+  z-index: 800px;
+  box-shadow: 0px 2px 16px #888; }
+
+.z-dropdown {
+  z-index: 800px;
+  box-shadow: 0px 2px 16px #888; }
+
+.z-modal {
+  z-index: 1000px;
+  box-shadow: 0px 2px 20px #888; }
+
+.z-icon {
+  z-index: 1000px;
+  box-shadow: 0 0 0 transparent;
+  text-shadow: 45px 45px 0 #888;
+  box-shadow: 0 0 0 transparent; }
+
+/*# sourceMappingURL=z-index.css.map */
