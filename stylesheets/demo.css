@@ -1,29 +1,43 @@
 body {
   font-family: "helvetica neue" helvetica arial sans-serif;
-  background-color: #ff9d9d;
+  font-weight: 300;
+  background-color: #f9f9f9;
   height: 100vh;
   display: flex;
   box-sizing: border-box; }
   body div {
     box-sizing: border-box; }
 
+h1 {
+  color: #666; }
+
+p {
+  margin-bottom: 3rem; }
+
 #panel {
-  background-color: whitesmoke;
-  border-radius: 1rem;
-  width: 60vw;
-  height: 60vh;
+  background-color: white;
+  width: 15vw;
   padding: 1rem;
-  margin-top: 20vh;
-  margin-bottom: 20vh;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   margin-left: 20vw;
   margin-right: 20vw; }
   #panel p {
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 300;
     display: block;
     color: #888;
     margin-top: 0.5rem;
     margin-bottom: 3rem; }
+
+#no-panel {
+  background-color: transparent;
+  width: 60vw;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 20vw;
+  margin-right: 20vw; }
 
 select {
   background: white;
@@ -46,5 +60,11 @@ select {
   color: white;
   text-decoration: none;
   margin-top: 1rem; }
+  #button.prime {
+    background-color: #4A90E2; }
+  #button.sec {
+    background-color: #51bfa2; }
+  #button.tre {
+    background-color: #333; }
 
 /*# sourceMappingURL=demo.css.map */

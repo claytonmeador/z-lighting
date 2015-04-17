@@ -1,22 +1,49 @@
-$x-light: 0px!default
-$y-light: 2px!default
-$z-lighting-color: #888!default
+$x-light-position: 10
+$y-light-position: 30
 
-=z-position($z-index: 0, $shadow: false, $text: false)
+
+
+
+$x-shadow: (($x-light-position / 10) + px)
+$y-shadow: (($y-light-position / 10) + px)
+$z-blur: 8px
+$z-lighting-color: rgba(0, 0, 0, 0.3)!default
+
+=z-position($z-index: 0, $x-position: $x-shadow, $y-position: $y-shadow, $shadow: false, $blur: $z-blur, $text: false)
   z-index: $z-index * 100
+  $z-blur: 8px
   @if $shadow == true
-    box-shadow: $x-light $y-light ($z-index * 2) $z-lighting-color
+    box-shadow: $x-position $y-position $z-blur $z-lighting-color
   @if $shadow == false
     box-shadow: 0 0 0 transparent
   @if $text == true
-    text-shadow: $x-light $y-light ($z-index * 2) $z-lighting-color
+    text-shadow: $x-position $y-position $z-blur $z-lighting-color
     box-shadow: 0 0 0 transparent
   @if $z-index > 10
     @error "oops the $z-index value for the mixin z-position was set to #{$z-index}, keep the value between 0 and 10."
 
+=z-animate($animation: theSlowArcofTime, $start-x: 10, $start-y: 0, $end-x: 1000, $end-y: 400, $duration: 100s)
+  animation: $animation $duration cubic-bezier(0.4, 0, 0.2, 1) infinite
+  animation-direction: alternate
+  -webkit-animation: theSlowArcofTime $duration cubic-bezier(0.4, 0, 0.2, 1) infinite
+  -webkit-animation-direction: alternate
+  @keyframes theSlowArcofTime
+    from
+      +z-position($z-index: 4px, $x-position: (($start-x) + px), $y-position: (($start-y) + px), $shadow: true)
+    to
+      +z-position($z-index: 4px, $x-position: (($end-x) + px), $y-position: (($end-y) + px), $shadow: true)
+  @-webkit-keyframes theSlowArcofTime
+    from
+      +z-position($z-index: 4px, $x-position: (($start-x) + px), $y-position: (($start-y) + px), $shadow: true)
+    to
+      +z-position($z-index: 4px, $x-position: (($end-x) + px), $y-position: (($end-y) + px), $shadow: true)
+
 
 .z-button
   +z-position($z-index: 4px, $shadow: true)
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+  &:active
+    box-shadow: $x-shadow $y-shadow ($z-blur * 2) $z-lighting-color
 
 .z-panel
   +z-position($z-index: 8px, $shadow: true)
@@ -29,3 +56,8 @@ $z-lighting-color: #888!default
 
 .z-icon
   +z-position($z-index: 1px, $shadow: false, $text: true)
+
+.z-button, .z-panel, .z-dropdown, .z-modal
+  &.z-animate
+    +z-animate($animation: theSlowArcofTime, $start-x: 6, $start-y: 3, $end-x: -6, $end-y: -3)
+

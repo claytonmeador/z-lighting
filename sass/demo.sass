@@ -1,33 +1,45 @@
 // You should probably disregard this file. It's just here to give us some stuff to light up
 body
   font-family: 'helvetica neue' helvetica arial sans-serif
-  background-color: lighten(#ff5050, 15)
+  font-weight: 300
+  // background-color: lighten(#ff5050, 15)
+  background-color: #f9f9f9
   height: 100vh
   display: flex
   box-sizing: border-box
   div
     box-sizing: border-box
-
+h1
+  color: #666
+p
+  margin-bottom: 3rem
 
 #panel
-  background-color: whitesmoke
-  border-radius: 1rem
-  width: 60vw
-  height: 60vh
+  background-color: white
+  width: 15vw
   padding: 1rem
-
   margin:
-    top: 20vh
-    bottom: 20vh
+    top: 3rem
+    bottom: 3rem
     left: 20vw
     right: 20vw
   p
     font-size: 22px
-    font-weight: 700
+    font-weight: 300
     display: block
     color:  #888
     margin-top: .5rem
     margin-bottom: 3rem
+
+#no-panel
+  background-color: transparent
+  width: 60vw
+  padding: 1rem
+  margin:
+    top: 3rem
+    bottom: 3rem
+    left: 20vw
+    right: 20vw
 
 select
   background: white
@@ -52,3 +64,10 @@ select
   text-decoration: none
   margin:
     top: 1rem
+  &.prime
+    background-color: #4A90E2
+  &.sec
+    background-color: #51bfa2
+  &.tre
+    background-color: #333
+
